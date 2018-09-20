@@ -215,6 +215,30 @@ char **getURLs(char *html)
 
 void noRepeat(char **urls)
 {
+    int n =0;
+    while (urls[n][0] != '\0') {
+        int i = 0;
+        while (urls[n][i] != '\0') {
+            i++;
+        }
+        if (urls[n][i - 1] == '/') {
+            urls[n][i - 1] = '\0';
+        }
+        n++;
+    }
+    
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; urls[j][0] != '\0'; j++) {
+            if (strcmp(urls[i], urls[j]) == 0) {
+                for (int k = j; urls[k][0] != '\0'; k++) {
+                    strcpy(urls[k], urls[k + 1]);
+                }
+                j--;
+            }
+        }
+    }
+    
+    //printf("%d\n", n);
     
 }
 
@@ -238,7 +262,7 @@ int main(int argc, char *argv[])
         printf("%s\n", urls[i]);
         i++;
     }
-    
+
     printf("Number of URLs - %d\n", i);
     
     return 0;
