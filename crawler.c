@@ -300,6 +300,16 @@ void saveURLsInFile(char **urls)
     fclose(fptr);
 }
 
+void displayURLs(char **urls)
+{
+    int i =0;
+    while (urls[i][0] != '\0') {
+        printf("%s\n", urls[i]);
+        i++;
+    }
+    printf("Number of URLs - %d\n", i);
+}
+
 int main(int argc, char *argv[])
 {
     printArguments(argc, argv);
@@ -311,12 +321,7 @@ int main(int argc, char *argv[])
     
     saveURLsInFile(urls);
     
-    int i =0;
-    while (urls[i][0] != '\0') {
-        printf("%s\n", urls[i]);
-        i++;
-    }
-    printf("Number of URLs - %d\n", i);
+    displayURLs(urls);
     
     return 0;
 }
