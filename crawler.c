@@ -164,7 +164,9 @@ void noRepeat(char **urls)
                 strcpy(urls[k], urls[k + 1]);
             }
             i--;
+            continue;
         }
+        
         for (int j = i + 1; urls[j][0] != '\0'; j++) {
             if (strcmp(urls[i], urls[j]) == 0) {
                 for (int k = j; urls[k][0] != '\0'; k++) {
@@ -175,7 +177,17 @@ void noRepeat(char **urls)
         }
     }
 }
-
+void baseSame(char **urls)
+{
+    for (int i = 0; urls[i][0] != '\0'; i++) {
+        if (strstr(urls[i], SEED_URL) == NULL) {
+            for (int k = i; urls[k][0] != '\0'; k++) {
+                strcpy(urls[k], urls[k + 1]);
+            }
+            i--;
+        }
+    }
+}
 char **getURLs(char *html)
 {
     int i = 0, j = 0, k = 0, l = 0;
@@ -242,28 +254,68 @@ char **getURLs(char *html)
     
     free(str);
     noRepeat(urls);
+    baseSame(urls);
     return urls;
+}
+
+void itoa(int num, char* result)
+{
+    static  int i=0;
+    if(num == 0)
+    {
+        i=0;
+        return;
+        
+    }
+    
+    
+    int rem = num%10;
+    itoa(num/10,result);
+    
+    result[i] = (rem) + 48;
+    result[i+1] = '\0';
+    i++;
+}
+
+void saveURLsInFile(char **urls)
+{
+    FILE *fptr = fopen("/Users/aryankush25/Desktop/Project_Search_Engine/URLs.txt","w");
+    int i = 0;
+    while (urls[i][0] != '\0') {
+        int j = 0;
+        while (urls[i][j] != '\0') {
+            putc(urls[i][j], fptr);
+            j++;
+        }
+        putc('\n', fptr);
+        i++;
+    }
+    
+    char c[10];
+    
+    itoa(i, c);
+    
+    fputs("Total No. of URLs - ", fptr);
+    fputs(c, fptr);
+    fclose(fptr);
 }
 
 int main(int argc, char *argv[])
 {
     printArguments(argc, argv);
-    
-    if(testArguments(argc, argv) == 0)
-        return 0;
+    if(testArguments(argc, argv) == 0) return 0;
     
     getpage(argv[1]);
-    
     char *html = getPageContent();
-    
     char **urls = getURLs(html);
+    
+    saveURLsInFile(urls);
     
     int i =0;
     while (urls[i][0] != '\0') {
         printf("%s\n", urls[i]);
         i++;
     }
-
     printf("Number of URLs - %d\n", i);
     
     return 0;
