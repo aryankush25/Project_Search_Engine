@@ -5,7 +5,7 @@
 #include <sys/stat.h>
 #define HASH_SIZE 100
 
-#define URL_LENGTH 100
+#define URL_LENGTH 1000
 
 #define SEED_URL "https://www.chitkara.edu.in"
 
@@ -213,6 +213,11 @@ char **getURLs(char *html)
     return urls;
 }
 
+void noRepeat(char **urls)
+{
+    
+}
+
 int main(int argc, char *argv[])
 {
     printArguments(argc, argv);
@@ -226,7 +231,7 @@ int main(int argc, char *argv[])
     
     char **urls = getURLs(html);
     
-    
+    noRepeat(urls);
     
     int i =0;
     while (urls[i][0] != '\0') {
@@ -234,7 +239,7 @@ int main(int argc, char *argv[])
         i++;
     }
     
-    printf("%d", i);
+    printf("Number of URLs - %d\n", i);
     
     return 0;
 }
