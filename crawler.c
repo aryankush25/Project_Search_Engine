@@ -144,6 +144,38 @@ char *getPageContent()
     return str;
 }
 
+void noRepeat(char **urls)
+{
+    int n =0;
+    while (urls[n][0] != '\0') {
+        int i = 0;
+        while (urls[n][i] != '\0') {
+            i++;
+        }
+        if (urls[n][i - 1] == '/') {
+            urls[n][i - 1] = '\0';
+        }
+        n++;
+    }
+    
+    for (int i = 0; i < n; i++) {
+        if (strcmp(urls[i], SEED_URL) == 0) {
+            for (int k = i; urls[k][0] != '\0'; k++) {
+                strcpy(urls[k], urls[k + 1]);
+            }
+            i--;
+        }
+        for (int j = i + 1; urls[j][0] != '\0'; j++) {
+            if (strcmp(urls[i], urls[j]) == 0) {
+                for (int k = j; urls[k][0] != '\0'; k++) {
+                    strcpy(urls[k], urls[k + 1]);
+                }
+                j--;
+            }
+        }
+    }
+}
+
 char **getURLs(char *html)
 {
     int i = 0, j = 0, k = 0, l = 0;
@@ -209,37 +241,8 @@ char **getURLs(char *html)
     }
     
     free(str);
-    
+    noRepeat(urls);
     return urls;
-}
-
-void noRepeat(char **urls)
-{
-    int n =0;
-    while (urls[n][0] != '\0') {
-        int i = 0;
-        while (urls[n][i] != '\0') {
-            i++;
-        }
-        if (urls[n][i - 1] == '/') {
-            urls[n][i - 1] = '\0';
-        }
-        n++;
-    }
-    
-    for (int i = 0; i < n; i++) {
-        for (int j = i + 1; urls[j][0] != '\0'; j++) {
-            if (strcmp(urls[i], urls[j]) == 0) {
-                for (int k = j; urls[k][0] != '\0'; k++) {
-                    strcpy(urls[k], urls[k + 1]);
-                }
-                j--;
-            }
-        }
-    }
-    
-    //printf("%d\n", n);
-    
 }
 
 int main(int argc, char *argv[])
@@ -254,8 +257,6 @@ int main(int argc, char *argv[])
     char *html = getPageContent();
     
     char **urls = getURLs(html);
-    
-    noRepeat(urls);
     
     int i =0;
     while (urls[i][0] != '\0') {
