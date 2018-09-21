@@ -21,6 +21,24 @@ exit(-1); \
 
 #define SET_MEM(start,size) memset(start,0,size)
 
+struct url {
+    char c[URL_LENGTH];
+    int depth;
+};
+
+struct node {
+    struct url u;
+    int visited;
+    int key;
+    struct node *next;
+};
+
+struct hash {
+    struct node *_head;
+    struct node *_tail;
+    int count;
+};
+
 void testURL(char *url)
 {
     if (strcmp(url,SEED_URL) != 0 ) {
@@ -261,17 +279,12 @@ char **getURLs(char *html)
 void itoa(int num, char* result)
 {
     static  int i=0;
-    if(num == 0)
-    {
+    if(num == 0) {
         i=0;
         return;
-        
     }
-    
-    
     int rem = num%10;
     itoa(num/10,result);
-    
     result[i] = (rem) + 48;
     result[i+1] = '\0';
     i++;
@@ -310,18 +323,81 @@ void displayURLs(char **urls)
     printf("Number of URLs - %d\n", i);
 }
 
+void createNode(struct hash *h, int key, char* url)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    strcpy(temp->u.c, url);
+    temp->visited = 0;
+    temp->key = key;
+    temp->next = h[key]._head;
+    h[key]._head = temp;
+}
+
+int chekNodePresent(struct hash *h, int key, char* url)
+{
+    struct node *temp = h[key]._head;
+    
+    while (temp != NULL) {
+        if(strcmp(temp->u.c, url) == 0)
+            return 1;
+        temp = temp->next;
+    }
+    return 0;
+}
+
+void insertIntoHash(struct hash *h, struct node **head, struct node **tail, char **urls)
+{
+    int i = 0;
+    while (urls[i][0] != '\0') {
+        int key = 0;
+        int j = 0;
+        while (urls[i][j] != '\0') {
+            key = key + urls[i][j];
+            j++;
+        }
+        key = key % 100;
+        h[key].count++;
+        if(chekNodePresent(h, key, urls[i]) != 1)
+            createNode(h, key, urls[i]);
+        i++;
+    }
+}
+
 int main(int argc, char *argv[])
 {
     printArguments(argc, argv);
     if(testArguments(argc, argv) == 0) return 0;
     
+    struct hash h[HASH_SIZE];
+    for (int i = 0; i < HASH_SIZE; i++) {
+        h[i]._head = NULL;
+        h[i]._tail = NULL;
+        h[i].count = 0;
+    }
+    
+    struct node *head = NULL;
+    struct node *tail = NULL;
+    
     getpage(argv[1]);
     char *html = getPageContent();
     char **urls = getURLs(html);
     
-    saveURLsInFile(urls);
+    insertIntoHash(h, &head, &tail, urls);
+    insertIntoHash(h, &head, &tail, urls);
     
-    displayURLs(urls);
+    for (int i = 0; i < 100; i++) {
+        
+        struct node *temp = h[i]._head;
+
+        while (temp != NULL) {
+            printf("%s\n", temp->u.c);
+            temp = temp->next;
+        }
+
+        printf("\n");
+    }
+    //saveURLsInFile(urls);
+    //displayURLs(urls);
     
     return 0;
 }
