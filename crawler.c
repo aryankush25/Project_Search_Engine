@@ -363,6 +363,17 @@ void insertIntoHash(struct hash *h, struct node **head, struct node **tail, char
     }
 }
 
+void displayHashTable(struct hash *h)
+{
+    for (int i = 0; i < 100; i++) {
+        struct node *temp = h[i]._head;
+        while (temp != NULL) {
+            printf("%s\n", temp->u.c);
+            temp = temp->next;
+        }
+        printf("\n");
+    }
+}
 int main(int argc, char *argv[])
 {
     printArguments(argc, argv);
@@ -385,17 +396,7 @@ int main(int argc, char *argv[])
     insertIntoHash(h, &head, &tail, urls);
     insertIntoHash(h, &head, &tail, urls);
     
-    for (int i = 0; i < 100; i++) {
-        
-        struct node *temp = h[i]._head;
-
-        while (temp != NULL) {
-            printf("%s\n", temp->u.c);
-            temp = temp->next;
-        }
-
-        printf("\n");
-    }
+    displayHashTable(h);
     //saveURLsInFile(urls);
     //displayURLs(urls);
     
