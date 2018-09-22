@@ -397,8 +397,8 @@ int main(int argc, char *argv[])
     insertIntoHash(h, &head, &tail, urls);
     
     displayHashTable(h);
-    //saveURLsInFile(urls);
-    //displayURLs(urls);
+    saveURLsInFile(urls);
+    displayURLs(urls);
     
     return 0;
 }
