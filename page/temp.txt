@@ -1,15 +1,11 @@
 	
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" type="text/css" href="https://www.chitkara.edu.in/wp-content/cache/minify/b0c43.css" media="all" />
+<head><link rel="stylesheet" type="text/css" href="https://www.chitkara.edu.in/wp-content/cache/minify/b0c43.css" media="all"/>
 
 <meta charset="UTF-8" />
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-
-
-
-
 
 <!--<link rel="stylesheet" type="text/css" media="all" href="https://www.chitkara.edu.in/wp-content/themes/chitkara/stylesheet/responsivemobilemenu.css" />-->
 
