@@ -28,7 +28,7 @@ https://www.chitkara.edu.in/healthscience
 https://www.chitkara.edu.in/chitkara-school-of-mass-communication
 https://www.chitkara.edu.in/education
 https://www.chitkara.edu.in/polytechnic
-https://www.chitkara.edu.in/actuarial-science-analytics
+https://www.chitkara.edu.in/csbas
 https://www.chitkara.edu.in/engineering/computer-science-engineering
 https://www.chitkara.edu.in/engineering/electronics-computer-engineering
 https://www.chitkara.edu.in/engineering/electronics-communication-engineering
@@ -45,8 +45,7 @@ https://www.chitkara.edu.in/culinary-arts/b-sc-culinary-arts/specialisation-bake
 https://www.chitkara.edu.in/healthscience/b-sc-nursing-with-fortis
 https://www.chitkara.edu.in/healthsciences/2-year-post-basic-b-sc-nursing
 https://www.chitkara.edu.in/arts/bfa-in-applied-art
-https://www.chitkara.edu.in/arts/b-sc-animation
-https://www.chitkara.edu.in/arts/b-sc-interior-design
+https://www.chitkara.edu.in/arts/b-des-animation
 https://www.chitkara.edu.in/arts/b-des-game-design
 https://www.chitkara.edu.in/bca
 https://www.chitkara.edu.in/bca-mca-integrated
@@ -59,6 +58,7 @@ https://www.chitkara.edu.in/pharmacy/b-pharm
 https://www.chitkara.edu.in/pharmacy/2-year-b-pharma-practice
 https://www.chitkara.edu.in/pharm-d
 https://www.chitkara.edu.in/architecture/b-architecture
+https://www.chitkara.edu.in/arts/b-des-interior-design
 https://www.chitkara.edu.in/bjmc
 https://www.chitkara.edu.in/healthscience/b-optometry-with-sankara
 https://www.chitkara.edu.in/mba/marketing
@@ -77,7 +77,6 @@ https://www.chitkara.edu.in/engineering/me/electronics-communication-engineering
 https://www.chitkara.edu.in/engineering/me/construction-technology-management
 https://www.chitkara.edu.in/engineering/me/mechanical-engineering
 https://www.chitkara.edu.in/engineering/mca
-https://www.chitkara.edu.in/msc/actuarial-science-analytics
 https://www.chitkara.edu.in/pharmacy/m-pharm
 https://www.chitkara.edu.in/pharm-d-post-buccalureate
 https://www.chitkara.edu.in/healthscience/m-optometry
@@ -107,19 +106,22 @@ https://www.chitkara.edu.in/news/chitkara-university-signs-mou-saeindia
 https://www.chitkara.edu.in/counseling-schedule-engineering-programs-2018-19
 https://www.chitkara.edu.in/microsite
 https://www.chitkara.edu.in/orientation-schedule-session-2018-19
-https://www.chitkara.edu.in/events/icmis-2018
 https://www.chitkara.edu.in/events/10th-global-week-2018
 https://www.chitkara.edu.in/events/wecon-2018
 https://www.chitkara.edu.in/events/chitkara-engineering-ranks-high-several-parameters-top-t-schools-2018-dataquest-cmr-survey
+https://www.chitkara.edu.in/events/cbs-placed-64th-among-top-100-b-schools-india
 https://www.chitkara.edu.in/events/international-conference-sustainable-civil-engineering-practices
 https://www.chitkara.edu.in/cu-times
-https://www.chitkara.edu.in/news/wine-appreciation-session-pairing-wine-knowledge
-https://www.chitkara.edu.in/news/teachers-need-go-beyond
-https://www.chitkara.edu.in/news/cafr-3rd-annual-chefs-conclave-awards-organised-chitkara-university
+https://www.chitkara.edu.in/news/ccp-faculty-receive-certificate-recognition-international-conference-on-pharmaceutical-formulations
+https://www.chitkara.edu.in/news/18-states-60-teams-bring-theatre-fest-rangrezz-18-alive-passion-talent
+https://www.chitkara.edu.in/news/radio-chitkara-represents-india-in-a-24-hour-Global-Marathon-on-World-College-Radio-Day-2018
 https://www.chitkara.edu.in/pdf/health-science.pdf
 https://www.chitkara.edu.in/cfec
 https://www.chitkara.edu.in/admissions
 https://www.chitkara.edu.in/engineering/master-of-engineering-program
+https://www.chitkara.edu.in/msc/actuarial-science-analytics
+https://www.chitkara.edu.in/arts/b-sc-interior-design
+https://www.chitkara.edu.in/arts/b-sc-animation
 https://www.chitkara.edu.in/culinary-arts
 https://www.chitkara.edu.in/b-sc-mit-fortis-healthcare
 https://www.chitkara.edu.in/b-sc-ott-fortis-healthcare
@@ -172,4 +174,4 @@ https://www.chitkara.edu.in/pdf/NIRF-2018.zip
 https://www.chitkara.edu.in/pdf/NAD.jpg
 https://www.chitkara.edu.in/disclaimer
 https://www.chitkara.edu.in/privacy-policy
-Total No. of URLs - 174
+Total No. of URLs - 176

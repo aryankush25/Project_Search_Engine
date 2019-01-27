@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #define HASH_SIZE 100
@@ -139,7 +139,7 @@ char *getPageContent()
 {
     char c;
     int i = 0;
-    FILE *fptr = fopen("/Users/aryankush25/Desktop/Project_Search_Engine/page/temp.txt","r");
+    FILE *fptr = fopen("./page/temp.txt","r");
     
     while (!feof(fptr))
     {
@@ -292,7 +292,7 @@ void itoa(int num, char* result)
 
 void saveURLsInFile(char **urls)
 {
-    FILE *fptr = fopen("/Users/aryankush25/Desktop/Project_Search_Engine/URLs.txt","w");
+    FILE *fptr = fopen("./URLs.txt","w");
     int i = 0;
     while (urls[i][0] != '\0') {
         int j = 0;
@@ -374,7 +374,7 @@ void displayHashTable(struct hash *h)
         printf("\n");
     }
 }
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) // ./a.out https://www.chitkara.edu.in 1 page
 {
     printArguments(argc, argv);
     if(testArguments(argc, argv) == 0) return 0;
