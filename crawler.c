@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#define HASH_SIZE 100
+#define HASH_SIZE 1000
 
 #define URL_LENGTH 1000
 
